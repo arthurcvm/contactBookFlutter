@@ -81,11 +81,11 @@ class ContactHelper {
     return listContact;
   }
 
-  Future<int> getNumber() async {
-    Database dbContact = await db;
-    return Sqflite.firstIntValue(
-        await dbContact.rawQuery("SELECT COUNT(id) FROM $contactTable"));
-  }
+  // Future<int> getNumber() async {
+  //   Database dbContact = await db;
+  //   return Sqflite.firstIntValue(
+  //       await dbContact.rawQuery("SELECT COUNT(*) FROM $contactTable"));
+  // }
 
   Future close() async {
     Database dbContact = await db;
@@ -99,6 +99,8 @@ class Contact {
   late String email;
   late String phone;
   late String img;
+
+  Contact();
 
   Contact.fromMap(Map map) {
     id = map[idColumn];
