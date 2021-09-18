@@ -15,7 +15,7 @@ class ContactHelper {
 
   ContactHelper.internal();
 
-  late Database _db;
+  Database _db;
 
   Future<Database> get db async {
     if (_db != null) {
@@ -81,12 +81,6 @@ class ContactHelper {
     return listContact;
   }
 
-  // Future<int> getNumber() async {
-  //   Database dbContact = await db;
-  //   return Sqflite.firstIntValue(
-  //       await dbContact.rawQuery("SELECT COUNT(*) FROM $contactTable"));
-  // }
-
   Future close() async {
     Database dbContact = await db;
     dbContact.close();
@@ -94,11 +88,11 @@ class ContactHelper {
 }
 
 class Contact {
-  late int id;
-  late String name;
-  late String email;
-  late String phone;
-  late String img;
+  int id;
+  String name;
+  String email;
+  String phone;
+  String img;
 
   Contact();
 
